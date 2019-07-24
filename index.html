@@ -12,220 +12,40 @@
 </head>
 <body>
 <div class="container">
-  <br>
-<h1>Copies Generator</h1>
+<h1>Check if your price per lead is fine</h1>
 <br>
  <form>
   <div class="row">
     <div class="five columns">
-
+      <label for="Payout">Payout</label>
+      <input class="u-full-width" type="textarea"  value="750" placeholder="750" id="Payout">
     </div>
     <div class="five columns">
-        
+      <label for="CPL">CPL</label>
+         <input class="u-full-width" type="textarea" placeholder="CPL in USD" id="CPL">
+      </select>
     </div>
   </div>
   <br>
-  <input class="button-primary" type="button" value="Get Copy" onclick="newQuote()">
+  <input class="button-primary" type="button" value="Check" onclick="CheckValues()">
 </form>
 <br>
 <div id="output"></div>
- <div class="row" id="Headline"></div>
-  <div class="row" id="Copy"></div>
 <br>
+<p>* The result is calculated using 10% CR</p>
+<p>* Desired ROI is 100%</p>
 </div>
-
-
-
-
 </body>
 <script type="text/javascript">
-
-  let copies = [ 'Det var först efter intervjun som han insåg vad han precis hade sagt',
-'Myndigheterna är rasande, och producenterna överväger vilka åtgärder som ska vidtas', 
-'Detta sades verkligen i direktsändning!',
-'Hundratals medborgare använder redan detta till sin fördel',
-'Mikrofonen skulle egentligen inte vara påslagen vid det laget',
-'Mikrofonen var fortfarande på när detta sades i direktsänd TV!',
-'Dramat kommer att utvecklas live',
-'Sverige kommer inte att vara sig likt efter efter explosionen',
-'Svenskarna lurades av..',
-'Hemligheten bakom hans plötsliga framgång utnyttjas!',
-'Sverige bör ta tillfället i akt!',
-'George avslöjade sin största hemlighet!',
-'Detta är det sista tillfället att be om ursäkt till svenskarna!',
-'Det revolutionära systemet från George!',
-'Svenskarna kommer att vara tacksamma till George för...',
-'Den största lögnen är avslöjad! Detta var dolt för svenskarna till nu!',
-'Hans senaste initiativ lämnar bankerna långt efter!',
-'Alla lögner kom ut, men många kände fortfarande inte till den här hemligheten.',
-'Framgång knackar på svenskarnas dörr!',
-'Sverige kommer att dra nytta av Georges projekt!',
-'Den största affären i svensk historia..',
-'Han vill att svenskarna ska ta del av det största initiativet någonsin..',
-'George sa: "Dags för förändring, Sverige".',
-'George är Sveriges nya hjälte!',
-'Alla svenskar är mållösa!',
-'Stora tider på väg för Sverige!',
-'Georges senaste avslöjande är en tickande tidsinställd bomb!',
-'Något tokigt är på gång! Ingen förväntade sig ett sådant resultat!',
-'Överklassen är oroad efter att detta offentliggjordes!',
-'Bankerna bråkar med många svenskar!',
-'Bankerna jagar George för...!',
-'Den stora hemligheten kallas...',
-'Hårda sanningar från George!',
-'George har förberett ett tufft uppvaknande för hela Sverige!',
-'Detta hemliga projekt kommer att förbluffa dig!',
-'Det här kan bli nästa stora grej!',
-'Bankerna är rasande mot George men han skapade historia!',
-'Explosiv sanning blev ostoppbar!',
-'George varnar svenskarna: sanningen kan vara brutal!',
-'Rasande argument från George!',
-'Portarna öppnas nu för svenskarna!',
-'Dörrarna stängs snart!',
-'Till slut började George förklara..',
-'Svenskarna är mållösa efter...!',
-'Georges idé tar Sverige med storm!',
-'Georges senaste avslöjande blev en riktig bomb!',
-'George har ett meddelande till oss!!',
-'Denna intervju kan kosta honom dyrt..',
-'Brutal sanning om George!',
-'George skapar historia,',
-'Sverige kommer alltid att vara tacksamt!',
-'George står inför stora problem!',
-'Georges vårdslösa beteende kan kosta honom karriären!',
-'Svenskarna ångrar att de inte visste detta tidigare!',
-'Zlatan Ibrahimović avslöjar den dolda sanningen bakom...',
-'Zlatan Ibrahimović bekräftar rykten - "Varje svensk borde ha tillgång till denna!"',
-'Zlatan - "Jag kommer inte att vara tyst! Svenskar måste få veta detta!"',
-'Zlatans dramatiska tillkännagivande i direktsändning.',
-'De kunde inte stoppa sändningen - STOR hemlighet har avslöjats DIREKT i TV av misstag!',
-'Han kan inte komma undan konsekvenserna av sina handlingar...Det här gjorde han',
-'Lionel Messi bryter tystnaden',
-'Zlatans tillkännagivande påverkar alla svenskar.',
-'Zlatan visar årtiondets möjlighet för svenskar',
-'Ett fel i banksystemet avslöjades av Zlatan i direktsänd TV!',
-'Skedde detta verkligen i svensk direktsänd rikstelevision?',
-'Zlatan visar svenskarna hur han egentligen tjänar sina pengar',
-'Ingvar Kaprads - Sveriges rikaste man och ägaren av IKEA visar svenskarna den dolda sanningen om ...',
-'Lionel Messi bryter tystnaden',
-'Hammar återvänder till Sverige med sitt senaste projekt! Det är något alla svenskar har väntat på!',
-'Det revolutionerande systemet från Hammar!',
-'"Ibra: I staterna hittade jag nya möjligheter att fylla på min plånbok. Och jag pratar inte om fotboll nu!',
-'Förresten är denna möjlighet tillgänglig för alla, även i Sverige."',
-'Zlatan chockade allmänheten genom att avslöja sin hemlighet!',
-'" Fillip kommer att vända upp och ned på vår invanda uppfattning om lycka.',
-'Artificiell intelligens har korrumperat människors sinnen."',
-'Banker kan snart komma att behöva stänga ner på grund av Ibrahimovics senaste uttalande. Det här undergräver deras ekonomi helt och hållet.',
-'Ibrahimovic är det största hotet mot det svenska bankväsendet!',
-'Av misstag gör Federer ett HÖGEXPLOSIVT AVSLÖJANDE i direktsänd TV',
-'Lionel Messi är uträknad!',
-'"Lionel Messi lät det avslöjas i direktsändning ... Det är inget de gläds åt"',
-'Messi bekräftar ryktena',
-'Messis dagar är räknade efter att han lät detta ske i direktsänd TV',
-'Lionel Messi KAN INTE undkomma konsekvenserna av sitt agerande!',
-'Han visste inte vad hon avslöjade i DIREKTSÄND TV innan det var för sent!',
-'Hammars dagar är räknade efter att han tillät detta att hända live',
-'"Hammars råd gjorde det enklare för svenska folket att tjäna pengar!"',
-'Rykten bekräftades av Andrea',
-'Sveriges svåraste tid är på väg',
-'Drama på den här nya idéns scen!',
-'"Eliten" vill inte att andra svenskar ska ha tillgång till detta!',
-'Sista timmen: skandal för Hammars..',
-'Hände det verkligen i direktsändning på svensk riks-TV?',
-'Detta är en intervju som inte kunde stoppas',
-'Producenterna är inte glada över den här incidenten, men när han sa det på live-TV var det för sent!',
-'En intervju med allvarliga konsekvenser för Bill',
-'Skedde det verkligen på live-TV?',
-'Vinster utan motstycke för de som är beredda att satsa 250.',
-'Han var precis på en nationell TV-show och exponerade ALLT',
-'"De kunde inte stoppa den här TV-strömmen.."',
-'Hon avslöjade av misstag det här smarta kryphålet på TV',
-'Avslöjade han verkligen det här kryphålet på en TV-show live?',
-'Han hävdar att vem som helst kan göra det live på kanal SVT2',
-'TV-showen blev helt mållös',
-'"Han blev helt mållös',
-'"Eliten" vill inte att jag ska dela det här, men mitt samvete låter mig inte hålla det enbart för mig själv',
-'Hon måste vara rädd för allvarliga konsekvenser efter skandalösa avslöjanden under en live-sändning',
-'Enligt SVT kommer den här skandalen att gå till historien',
-'Den tuffaste av tider för Sverige närmar sig',
-'"Ett utomordentligt sätt som gör att du inte behöver oroa dig över nästa lön något mer…',
-'Metoden avslöjades av misstag och har av uppenbara skäl blivit viral.',
-'Svenskar rapporterar "galna" följder av att använda detta',
-'TV delar med allmänheten vad som fram till nu har varit gömt',
-'"Han tog fram sin telefon och visade tittarna exakt hur systemet funkar för honom."',
-'Tittarna förväntade sig inte en sådan vändning',
-'Tonåring avslöjar hur han köpte sin mamma.',
-'En nationell skandal. Nu kommer hela Sverige veta..',
-'Musk pratar om vad alla i Sverige viskar om!',
-'Han har gjort sitt ett namn och gör nu detsamma för alla er!',
-'De försökte hindra sändningen, men det var för sent! ',
-'"De kommer undanröja mig för att jag avslöjade den här ..." ',
-'Denna metod är nästan för enkel ',
-'Tillkännagivandet har skakat världen ',
-'Svenskarna är chockade av detta',
-'Det hände i direktsänd TV ',
-'Kryphålet avslöjades av misstag i direktsändning ',
-'Ett fantastiskt slut för denna ...',
-'Denna innovativa app revolutionerar hela systemet. Myndigheterna är överrumplade av hans ..',
-'Världsnyheten som förändrar liv ',
-'Går euron mot recession efter detta? ',
-'Myndigheterna mörkade den enastående uppfinningen, men nu är det för sent ',
-'Hjärtkrossande besked för svenskar',
-'Karriärdödande drag av Musk',
-'Ledsam dag för svenskar',
-'Svensk fru döljer en hemlighet!',
-'Svensk fru döljer en hemlighet för sin man i 3 år',
-'"Detta var det SVÅRASTE jag någonsin gjort, FÖRLÅT!"',
-'Svensk fru TILLINTETGJORDE nästan sin familj på grund av denna hemlighet!',
-'Svensk kvinna döljer en hemlighet för sin familj på grund av ...',
-'Svensk fru gråter i timmar efter att hennes man får reda på hennes hemlighet!',
-'"SENASTE NYTT:',
-'Svensk fru döljer detta från sin familj!"',
-'"Jag riskerade allting! och det är värt det!"',
-'Svensk fru avslöjar sin största hemlighet – "Jag var tvungen att dölja detta tills jag kände mig tillräckligt bekväm! Jag är ledsen, okej?"',
-'Min bankkontoansvarige erbjöd mig PENGAR för att INTE dela detta!',
-'Den här metoden SKRÄMMER stora banker över hela Sverige',
-'Betala INTE ditt nästa lån innan du har sett detta',
-'Tusentals svenskar utnyttjar detta just nu!',
-'"Eliten" vill inte att andra svenskar ska få reda på detta! Det har varit dolt för allmänheten i åratal!',
-'Den här metoden avslöjades av misstag och blev viral av uppenbara skäl. Tusentals svenskar utnyttjar detta just nu.',
-'Detta trick har hållits hemligt för allmänheten i 2 år nu, och avslöjades av misstag av dess ägare. Svenskar har kastat sig över det under de senaste dagarna.',
-'Det hölls hemligt under 2 år och nu...',
-'Banker över hela Sverige försöker dölja läckorna från allmänheten!',
-'TREND: Många svenskar säger upp sina jobb på grund av detta!',
-'82% av de svenska användarna rapporterar redan vinster.',
-'Titta INTE på detta videoklipp publikt! Svenska miljardärer försöker CENSURERA detta videoklipp till VARJE PRIS!',
-'Svenska miljardärer LIVRÄDDA: "DETTA ÄR INTE RÄTTVIST" - (Men det är fortfarande lagligt!)',
-'Jag betalade av hela mitt LÅN bara genom att göra detta! Banken erbjöd mig PENGAR för att hålla det HEMLIGT',
-'Stefan ger vanligt folk nya möjligheter',
-'Äntligen kan människor nå framgång utan skam tack vare hans ..',
-'Persson avslöjade den här möjligheten för vanligt folk',
-'Den kan missbrukas om den hamnar i fel händer',
-'Ett nytt system som lurade hela Sverige',
-'Banker försöker köpa upp det och hålla det borta från vanliga människor.',
-'Banker försöker hålla det från svenska medborgare med alla medel de kan!',
-'Detta kan vara ett potentiellt hot mot hela Sverige',
-'Detta är ett hot mot hela Sverige - de har försökt att hålla det under radarn!',
-'Andreas fick nog! Det är dags för alla svenskar att lära sig sanningen under radarn!',
-'Filip fick nog! Det är dags för alla svenskar att lära sig sanningen under radarn som "de" har försökt dölja från allmänheten!'
-]
-  function newQuote() {
-    let randomNumber = Math.floor(Math.random() * (copies.length));
-    let randomNumber1 = Math.floor(Math.random() * (copies.length)+1);
-
-document.getElementById('Headline').innerHTML = copies[randomNumber];
-document.getElementById('Copy').innerHTML = copies[randomNumber1];
-
-
-	//function CheckValues() {
-		//document.querySelector('#output').innerText = '';
-		//let payout =parseInt(document.getElementById('Payout').value);
-		//let cpl = parseInt(document.getElementById('CPL').value);
-		//let costs = cpl*10;			
-		//let currentROI = Math.floor(payout*100/costs);
-		//let p = document.createElement('p');
-		//p.innerText = currentROI;
-		//document.querySelector('#output').innerText = 'ROI = ' + currentROI + ' %';
+	function CheckValues() {
+		document.querySelector('#output').innerText = '';
+		let payout =parseInt(document.getElementById('Payout').value);
+		let cpl = parseInt(document.getElementById('CPL').value);
+		let costs = cpl*10;			
+		let currentROI = Math.floor(payout*100/costs);
+		let p = document.createElement('p');
+		p.innerText = currentROI;
+		document.querySelector('#output').innerText = 'ROI = ' + currentROI + ' %';
 	}
 </script>
 </html>
