@@ -23,7 +23,10 @@
     <div class="five columns">
       <label for="CPL">CPL</label>
          <input class="u-full-width" type="textarea" placeholder="CPL in USD" id="CPL">
-      </select>
+    </div>
+        <div class="five columns">
+      <label for="CR">CR</label>
+         <input class="u-full-width" type="textarea" placeholder="CR in %" id="CR">
     </div>
   </div>
   <br>
@@ -32,7 +35,6 @@
 <br>
 <div id="output"></div>
 <br>
-<p>* The result is calculated using 10% CR</p>
 <p>* Desired ROI is 100%</p>
 
 <a href="indexcopy.html">Copies SWEDISH</a>
@@ -43,7 +45,8 @@
 		document.querySelector('#output').innerText = '';
 		let payout =parseInt(document.getElementById('Payout').value);
 		let cpl = parseInt(document.getElementById('CPL').value);
-		let costs = cpl*10;			
+    let cr = parseInt(document.getElementById('CR').value);
+		let costs = cpl*cr;			
 		let currentROI = Math.floor(payout*100/costs);
 		let p = document.createElement('p');
 		p.innerText = currentROI;
