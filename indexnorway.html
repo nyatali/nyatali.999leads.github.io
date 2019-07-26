@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" dir="ltr">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" integrity="sha256-2YQRJMXD7pIAPHiXr0s+vlRWA7GYJEK0ARns7k2sbHY=" crossorigin="anonymous" />
+    <meta name="description" content="calculator">
+    <title>Calculate price per lead</title>
+<script type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css"> 
+    <meta name="referrer" content="none">
+</head>
+<body>
+<div class="container">
+  <br>
+<h1>Copies Generator</h1>
+<br>
+ <form>
+  <div class="row">
+    <div class="five columns">
+
+    </div>
+    <div class="five columns">
+        
+    </div>
+  </div>
+  <br>
+  <input class="button-primary" type="button" value="Get Copy" onclick="newQuote()">
+</form>
+<br>
+<div id="output"></div>
+ <div class="row" id="Headline"></div>
+  <div class="row" id="Copy"></div>
+<br>
+</div>
+
+
+
+
+</body>
+<script type="text/javascript">
+
+  let copies = [ 'Det var ikke før etter intervjuet at han forsto hva han nettopp hadde sagt',
+'Myndighetene er rasende, og produsentene bestemmer seg for hva de skal gjøre',
+'Dette ble faktisk sagt under en direktesending!',
+'Hundrevis av innbyggere bruker allerede dette til sin fordel',
+'Det var ikke meningen at mikrofonen fortsatt skulle gjøre opptak',
+'Mikrofonen var fremdeles på da dette ble sagt på direktesendt TV!',
+'Dramaet utspilles i sanntid ',
+'Norge vil aldri bli det samme igjen etter sjokkbølgen',
+'Nordmenn ble lurt av ...',
+'Hemmeligheten bak suksessen hans er avdekket!',
+'Norge bør gripe sjansen!',
+'George røpet sin største hemmelighet!',
+'Dette er det siste forsøket på en unnskyldning til nordmenn!',
+'Det revolusjonerende systemet fra George!',
+'Nordmenn vil takke George for ...',
+'Den største løgnen er avslørt! Nordmenn visste ikke dette før nå!',
+'Det nyeste initiativet hans gjør at bankene ligger langt bak!',
+'Løgnene ble avslørt, men mange visste fortsatt ikke om hemmeligheten hans.',
+'Suksess banker på døren til nordmenn!',
+'Norge vil tjene på Georges prosjekt!',
+'Den største hendelsen i norgeshistorien ...',
+'Han vil at nordmenn skal ta del i det største initiativet noensinne …',
+'George sa: «På tide med noe nytt, Norge».',
+'George er Norges nye helt!',
+'Hele Norge er målbundet!',
+'Norge har store ting i vente!',
+'Georges siste avsløring er en tikkende tidsbombe!',
+'Noe stort er på vei! Ingen hadde forventet et slikt resultat!',
+'Etter offentliggjørelsen er sosieteten bekymret!',
+'Bankene lurer mange nordmenn!',
+'Bankene forfølger George for..!',
+'Denne store hemmeligheten er avslørt ...',
+'Brutale sannheter fra George!',
+'George har forberedt et sjokk for hele Norge!',
+'Dette hemmelige prosjektet vil gjøre deg lamslått!',
+'Dette kan bli det neste store!',
+'Bankene er rasende på George, men han har skapt historie!',
+'Det ble umulig å stoppe de hårreisende sannhetene!',
+'George advarer nordmenn: Sannheten kan virke brutal!',
+'Rasende argument fra George!',
+'Dørene står åpne for nordmenn!',
+'Dørene lukker snart!',
+'Endelig forklarer George det hele ...',
+'Nordmenn mister munn og mæle etter ...',
+'Georges idé tar Norge med storm!',
+'Den siste uttalelsen fra George kom som et skikkelig sjokk!',
+'George har noe å fortelle oss!!',
+'Dette intervjuet kan koste ham dyrt …',
+'Brutale sannheter om George!',
+'George skaper historie',
+'Norge vil alltid være takknemlig!',
+'Nå sliter George!',
+'Georges uforsiktige opptreden kan koste ham karrieren!',
+'Nordmenn er lei for at de ikke visste dette tidligere!',
+'Verdens beste sjakkspiller avslører hvordan han egentlig tjener pengene sine...',
+'Carlsen avslører den skjulte hemmeligheten bak...',
+'Akkurat nå: Skandale for Carlsen...',
+'Magnus Carlsen sa ja til at det kunne avsløres på direkten... Det liker de dårlig',
+'"Eliten" ønsker ikke at andre nordmenn skal ha tilgang til dette!',
+'Magnus Carlsen begynner å gråte i et direkte TV-intervju',
+'Lionel Messi bryter tausheten',
+'Ryktene sier at det er slutten ...',
+'Marco kan ikke slippe unna følgene av den skandaløse avsløringen',
+'Journalistene var i sjokk etter avsløringen av et unikt system som kan endre Norges økonomi fullstendig!',
+'Avsløringen får konsekvenser for Marcel Boekhoorn',
+'"Dette er et direkteintervju ingen kunne stoppe ... For et stort tap for fansen ..."',
+'"Han var nettopp på en riksdekkende TV-sending og avslørte ALT"',
+'De kunne ikke stoppe denne fjernsynsoverføringen…',
+'Han avslørte utilsiktet dette smarte smutthullet på TV'
+'Avslørte han virkelig dette smutthullet direkte i en TV-sending?',
+'Han hevder direkte på NRK1 at alle kan gjøre det',
+'"TV-sendingen ble «målbundet»"',
+'Han sto «målbundet» igjen',
+'«Eliten» vil ikke at andre nordmenn skal ha tilgang til dette!',
+'Dramatikk på norsk TV – en «hemmelighet» ble avslørt ved en feil',
+'Stein Erik lot det bli avslørt på direkten ... De er ikke glade for det',
+'Dramatikk på settet om denne nye ideen!',
+'"Dette er et intervju som ikke kunne bli stoppet"',
+'Etter skandaløse avsløringer under en direktesending, frykter han de alvorlige konsekvensene',
+'"En ekstraordinær måte å ikke lenger måtte bekymre seg for neste lønnsutbetaling.."',
+'Ryktene ble bekreftet av Stein Erik',
+'Stein Erik sa at denne skandalen kommer til å bli historisk',
+'Trist dag for Norge',
+'Lionel Messis dager er talte!',
+'Lionel Messi tillot avsløringen på direkten ... Det liker de ikke',
+'Messi bekrefter ryktene',
+'Messis dager er talte etter at han lot dette utfolde seg på direktesendt TV',
+'Lionel Messi KAN IKKE flykte fra konsekvensene av sine handlinger!',
+'Han visste ikke hva hun avslørte på DIREKTESENDT TV før det var for sent!',
+'Ydmykende nederlag for Norge.',
+'Et nytt system som har lurt hele Norge.',
+'Bankene prøver å kjøpe det opp for å holde det unna vanlige folk.',
+'Bankene prøver å holde det unna norske statsborgere ved å bruke alle ressurser de har til disposisjon!',
+'Dette kan være en potensiell trussel for hele Norge',
+'Dette er en trussel for hele Norge – de har prøvd å holde det hemmelig!',
+'Andreas har fått nok! Det er på tide at alle nordmenn får vite den skjulte sannheten!',
+'Andreas har fått nok! Det er på tide at alle nordmenn får vite den skjulte sannheten som «de» har prøvd å gjemme for offentligheten!',
+]
+  
+  function newQuote() {
+    let randomNumber = Math.floor(Math.random() * (copies.length));
+    let randomNumber1 = Math.floor(Math.random() * (copies.length)+1);
+
+document.getElementById('Headline').innerHTML = copies[randomNumber];
+document.getElementById('Copy').innerHTML = copies[randomNumber1];
+
+
+	//function CheckValues() {
+		//document.querySelector('#output').innerText = '';
+		//let payout =parseInt(document.getElementById('Payout').value);
+		//let cpl = parseInt(document.getElementById('CPL').value);
+		//let costs = cpl*10;			
+		//let currentROI = Math.floor(payout*100/costs);
+		//let p = document.createElement('p');
+		//p.innerText = currentROI;
+		//document.querySelector('#output').innerText = 'ROI = ' + currentROI + ' %';
+	}
+</script>
+</html>
+
+
+
+
