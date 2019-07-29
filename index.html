@@ -54,7 +54,7 @@
     let cr = parseInt(document.getElementById('CR').value);
     let profit = payout*cr;	
     let costs = 100*cpl;
-		let currentROI = Math.floor(profit*100/costs);
+		let currentROI = Math.floor(profit*100/costs)-100;
 		let p = document.createElement('p');
 		p.innerText = currentROI;
 		document.querySelector('#output').innerText = 'ROI = ' + currentROI + ' %';
