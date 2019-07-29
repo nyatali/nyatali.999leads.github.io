@@ -37,7 +37,7 @@
 <br>
 <p>* Desired ROI is 100%</p>
 
-<a href="indexcopy.html">Copies SWEDISH</a>
+<a href="indexswedish.html">Copies SWEDISH</a>
 <br>
 <a href="indexnorway.html">Copies NORWEGIAN</a>
 <br>
@@ -52,8 +52,9 @@
 		let payout =parseInt(document.getElementById('Payout').value);
 		let cpl = parseInt(document.getElementById('CPL').value);
     let cr = parseInt(document.getElementById('CR').value);
-		let costs = cpl*cr;			
-		let currentROI = Math.floor(payout*100/costs);
+    let profit = payout*cr;	
+    let costs = 100*cpl;
+		let currentROI = Math.floor(profit*100/costs);
 		let p = document.createElement('p');
 		p.innerText = currentROI;
 		document.querySelector('#output').innerText = 'ROI = ' + currentROI + ' %';
