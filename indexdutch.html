@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" dir="ltr">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" integrity="sha256-2YQRJMXD7pIAPHiXr0s+vlRWA7GYJEK0ARns7k2sbHY=" crossorigin="anonymous" />
+    <meta name="description" content="calculator">
+    <title>Calculate price per lead</title>
+<script type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css"> 
+    <meta name="referrer" content="none">
+</head>
+<body>
+<div class="container">
+  <br>
+<h1>Copies Generator</h1>
+<br>
+ <form>
+  <div class="row">
+    <div class="five columns">
+
+    </div>
+    <div class="five columns">
+        
+    </div>
+  </div>
+  <br>
+  <input class="button-primary" type="button" value="Get Copy" onclick="newQuote()">
+</form>
+<br>
+<div id="output"></div>
+ <div class="row" id="Headline"></div>
+  <div class="row" id="Copy"></div>
+<br>
+</div>
+
+
+
+
+</body>
+<script type="text/javascript">
+
+  let copies = [ 'Dit werd eigenlijk gezegd tijdens een live-uitzending',
+'De autoriteiten zijn woedend en de producenten bepalen welke actie ze kunnen ondernemen.',
+'Honderden burgers gebruiken dit al in hun voordeel.',
+'De microfoon was nog niet geacht op te nemen.',
+'De microfoon was nog ingeschakeld toen dit tijdens een live-uitzending werd gezegd!',
+'De Nederlanders werden voor de gek gehouden door..',
+'Nederland moet deze kans aangrijpen!',
+'Dit is de laatste kans om excuses aan de Nederlanders aan te bieden!',
+'Het revolutionaire systeem van Ali!',
+'De Nederlanders zullen Ali dankbaar zijn voor ...',
+'Nederland zal profiteren van  Ali s project!',
+'De grootste deal in de Nederlandse geschiedenis.',
+'Heel Nederland is sprakeloos!',
+'De high society maakt zich zorgen nadat dit openbaar is gemaakt!',
+'Dit kan de volgende klapper zijn!',
+'Ali zit in grote problemen!',
+'De Nederlanders betreuren dat ze dit niet eerder wisten.',
+'Hij kan niet ontkomen aan de gevolgen van zijn acties... Dit is wat hij deed.',
+'Dit kan een potentiële bedreiging betekenen voor heel Nederland.',
+'Banken proberen het af te kopen zodat het niet voor gewone mensen beschikbaar wordt.',
+'Dit werd eigenlijk gezegd tijdens een live-uitzending.',
+'De autoriteiten zijn woedend en de producenten bepalen welke actie ze kunnen ondernemen.',
+'Honderden burgers gebruiken dit al in hun voordeel.',
+'De microfoon was nog niet geacht op te nemen.',
+'De microfoon was nog ingeschakeld toen dit tijdens een live-uitzending werd gezegd!',
+'De Nederlanders werden voor de gek gehouden door..',
+'Nederland moet deze kans aangrijpen!',
+'Dit is de laatste kans om excuses aan de Nederlanders aan te bieden!',
+'Het revolutionaire systeem van Ali!',
+'De Nederlanders zullen Ali dankbaar zijn voor ...',
+'De grootste deal in de Nederlandse geschiedenis.',
+'Heel Nederland is sprakeloos!',
+'De high society maakt zich zorgen nadat dit openbaar is gemaakt!',
+'Dit kan de volgende klapper zijn!',
+'Ali zit in grote problemen!',
+'De Nederlanders betreuren dat ze dit niet eerder wisten.',
+'Hij kan niet ontkomen aan de gevolgen van zijn acties... Dit is wat hij deed.',
+'Dit kan een potentiële bedreiging betekenen voor heel Nederland.',
+'Banken proberen het af te kopen zodat het niet voor gewone mensen beschikbaar wordt.',
+'Niemand weet hoe, maar een privé-interview met Borsato werd per ongeluk openbaar en veranderde duizenden levens..',
+'De autoriteiten wachten de gevolgen zenuwachtig af! ',
+'De autoriteiten zijn een stap verwijderd van de mislukking!',
+'Borsato zegt: "Er is niets geheims over, ik heb je alles verteld."',
+'Lionel Messi verbreekt het stilzwijgen',
+'Volgens geruchten is dit het einde..',
+'Marco kan niet ontsnappen aan de gevolgen van zijn verschrikkelijke onthulling',
+'Dit is een live interview dat niemand kon tegenhouden.. Wat een groot verlies voor de fans..',
+'Hij trad net op op een nationale TV-show en onthulde ALLES',
+'Ze zijn er niet in geslaagd om deze TV-uitzending te stoppen..',
+'Hij onthulde per ongeluk deze slimme achterdeur op TV',
+'Heeft hij deze achterdeur echt onthuld op live TV?',
+'Hij claimt dat iedereen het Live kan doen op het NPO 1-kanaal',
+'De TV-serie was sprakeloos',
+'Hij was sprakeloos',
+'Hij ging gewoon naar de nationale tv-show en bracht ALLES aan het licht',
+'De Elite wil niet dat ik dit deel, maar mijn geweten laat mij dit niet alleen voor mezelf houden',
+'Borsato stond toe dat het live onthuld werd ... Ze zijn er niet blij mee',
+'Zijn doel is om duizenden Nederlanders te helpen hun rekeningen te betalen en hen het leven te laten leiden dat ze verdienen',
+'Borsato: Ongelooflijke achterdeur levert enorme bedragen op voor degenen die bereid zijn om 250 te investeren',
+'Toen Borsato besefte wat de mogelijke gevolgen van zijn daden waren, was het al te laat',
+'Borsato s enige doel: burgers helpen hun rekeningen te betalen en een goed leven te leiden.',
+'"Borsato heeft de geruchten bevestigd"',
+'Borsato s dagen zijn geteld na dit live te hebben laten gebeuren',
+'Borsato s advies heeft het voor de Nederlandse bevolking makkelijker gemaakt om geld te verdienen!',
+'Toen dit per ongeluk werd gedeeld, was het te laat om met de uitzending te stoppen. De banken zullen hier niet zo blij mee zijn!',
+'Het idee was eenvoudig: gewone Nederlanders de kans geven om...',
+'Alles wat je over hem weet is een leugen',
+'Nu zijn magnaten over de hele wereld kwaad op hem',
+'Trieste dag voor magnaten uit (here will be city name)',
+'de openbaring van een van de rijkste mensen ter wereld',
+'Magnaten zijn nu kwaad op hem omdat hij het gewone volk ook de mogelijkheid heeft gegeven om te profiteren',
+'Zijn laatste interview…',
+'Exclusief: Iron Man legt bekentenis af',
+'Dat heeft een eind aan alles gemaakt',
+'Deze innovatieve app gooit het hele systeem overhoop. De autoriteiten slaan steil achterover van zijn...',
+'Na drie jaar plannen is dit project eindelijk onthuld',
+'Een kans die zijn leven veranderde. Het leverde hem een verblijfsvergunning op.',
+'De beste deal van Musk.',
+'De dagen van Musk zijn onherroepelijk geteld.',
+'Is de euro hierna op weg naar een recessie?',
+'Autoriteiten hielden de opmerkelijke uitvinding verborgen, maar nu is het te laat',
+'Musk presenteerde een nieuw algoritme en schudde het bankenstelsel wakker',
+'"Er komen grote veranderingen aan. En ik ben blij dat ik bij hun oorsprong sta", zei Musk over zijn nieuwe project.',
+'Iron Man vertelde over zijn nieuwe deal',
+'BELANGRIJK: Een nieuwe interesse van Iron Man',
+'Musk herstelde 85% van de verliezen nadat hij wegging',
+'Elon is ervan overtuigd dat zijn nieuwe project de wereld zal veranderen. Alweer.',
+'OFFICIEEL: Er is al een nieuw project van Musk gestart',
+'OFFICIEEL: Musk onthult eindelijk zijn nieuwe project',
+'De onthullingen van Musk: "Ik wil duidelijk zijn. Het is een kwestie van toekomst. Nederlanders kunnen dit grote ding niet zomaar missen. De beste tijd is nu."',
+'Elon stelt zich open over zijn turbulente jaar',
+'Elon over FinTech: "Ik geloof oprecht dat nu de beste tijd is om te handelen. Nederlanders bevinden zich in een zeer winnende positie"',
+'Een nieuwe hoop voor de FinTech-industrie - Musk onthult zijn nieuwe presentatie',
+'Waarom betekent dit nieuws de dood van de tewerkstelling in Nederland?',
+'Beste dag voor Nederlanders',
+'Buitengewone dag voor Nederlanders',
+'Prachtige dag voor Nederlanders',
+'De innovatieve start-up beweert haar gebruikers binnen een jaar miljonair te maken',
+'De innovatieve start-up beweert haar gebruikers binnen een jaar rijk te maken',
+'De innovatieve start-up beweert: "Elke Nederlander waarmee we dit hebben gedeeld, heeft zijn baan binnen 4 weken opgegeven..."',
+'Verschrikkelijke dag voor Nederlanders',
+'Nieuwe investering van Musk laat Nederlanders geschokt achter',
+'Niemand verwachtte zulke claims van Musk',
+'Nederlanders zijn geschokt door de volgende zet van Elon',
+'Hollanders profiteren hier al van',
+'Een nieuw tijdperk voor Nederland en Musk',
+'Desastreus nieuws voor Nederland',
+'Spectaculair plan van Elon onthuld – Nederlanders zijn ongeduldig',
+'Spraakmakende uitspraak van Elon – Nederland staat klaar',
+'Nog een revolutionaire zet van Elon – Nederlanders zijn overweldigd',
+'De formule van Elon werkt al voor Nederland',
+'Nederlanders hebben het geluk om als eerste meer te weten te komen over de volgende zet van Elon',
+'Nederland anticipeert op de nieuwe presentatie van Elon',
+'De wonderbaarlijke uitvinding van Elon – Nederlanders hebben er al profijt van',
+'Een rampzalige dag voor Elon!',
+'Een trieste dag voor Elon!',
+'We nemen afscheid van Elon!',
+'Hartverscheurend nieuws voor Elon!',
+'Elon onthulde per ongeluk deze ondergrondse maas in de wet!',
+'Elon ontdekte fout van de bank waardoor het voor Nederlanders mogelijk is om "legaal"..',
+'Elon onthult zijn "ondergrondse" techniek voor...',
+'Banken in heel Nederland hebben Elon geld geboden om hun geheim niet te publiceren.',
+'Elon publiceerde zijn nieuwe technologie: "De gemiddelde Nederlander kan hierdoor..."',
+'Nieuwe ontdekking door Elon laat de gemiddelde Nederlander..',
+'Een trieste dag voor Nederland',
+'Elon: "Ze zullen me haten omdat ik dit openbaar maak, maar het maakt mij niet meer uit.."',
+'"Ze maken jacht op me omdat ik dit gedeeld heb"',
+'Het volgende grote project van Elon Musk',
+'Het echte probleem van Elon Musk',
+'zijn reactie op nationale televisie was schokkend',
+'Het zal de markt drastisch veranderen',
+'Hij probeerde het een en ander te verduidelijken, maar had dit niet verwacht',
+'Elon Musk slaat een nieuwe weg in',
+'De echte reden dat hij Tesla verliet',
+'Een gewaagde carrièremove waarvan het hele land zou kunnen profiteren!',
+'Elon Musk laat de bom barsten voor Nederlanders',
+'De meesten vinden zijn ideeën gestoord, maar...',
+'Desastreuze dag voor Tesla CEO Elon Musk',
+'Een zwarte dag voor Elon Musk',
+'Een catastrofe voor Elon Musk in Nederland',
+'Een carrièremove die het einde van Musk betekent!',
+'Een geweldige casus vertoonde zich enkele dagen geleden',
+'Hun deal werd lange tijd geheim gehouden. Geweldige openbaring',
+'Alle Nederlandse magnaten zijn boos op hen',
+'Trieste dag voor alle Nederlandse magnaten'
+]
+  
+  function newQuote() {
+    let randomNumber = Math.floor(Math.random() * (copies.length));
+    let randomNumber1 = Math.floor(Math.random() * (copies.length)+1);
+
+document.getElementById('Headline').innerHTML = copies[randomNumber];
+document.getElementById('Copy').innerHTML = copies[randomNumber1];
+
+
+	//function CheckValues() {
+		//document.querySelector('#output').innerText = '';
+		//let payout =parseInt(document.getElementById('Payout').value);
+		//let cpl = parseInt(document.getElementById('CPL').value);
+		//let costs = cpl*10;			
+		//let currentROI = Math.floor(payout*100/costs);
+		//let p = document.createElement('p');
+		//p.innerText = currentROI;
+		//document.querySelector('#output').innerText = 'ROI = ' + currentROI + ' %';
+	}
+</script>
+</html>
+
+
+
+
