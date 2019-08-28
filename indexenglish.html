@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" dir="ltr">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" integrity="sha256-2YQRJMXD7pIAPHiXr0s+vlRWA7GYJEK0ARns7k2sbHY=" crossorigin="anonymous" />
+    <meta name="description" content="calculator">
+    <title>Calculate price per lead</title>
+<script type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css"> 
+    <meta name="referrer" content="none">
+</head>
+<body>
+<div class="container">
+  <br>
+<h1>Copies Generator</h1>
+<br>
+ <form>
+  <div class="row">
+    <div class="five columns">
+
+    </div>
+    <div class="five columns">
+        
+    </div>
+  </div>
+  <br>
+  <input class="button-primary" type="button" value="Get Copy" onclick="newQuote()">
+</form>
+<br>
+<div id="output"></div>
+ <div class="row" id="Headline"></div>
+  <div class="row" id="Copy"></div>
+<br>
+</div>
+
+ITALY
+</body>
+<script type="text/javascript">
+
+  let copies = [ 'Only after this interview he realized what he said',
+'The authorities are enraged, and the producers are determining what action to take',
+'This was actually said during a live broadcast',
+'Hundreds of citizens are already using this to their advantage',
+'The microphone still wasn*t supposed to be recording this',
+'The Microphone Was Still On When This Was Said On Live TV!',
+'Robert: "Every Italian citizen should put his hands on this automated machine"',
+'The interview was stopped on live broadcast because of leaking of "sensitive information" that can..',
+'Life changing mistake by Robert!',
+'De Niro*s Career Almost Ended After This Interview',
+'I am ashamed I didn*t share it with Italians earlier',
+'She asked everybody to follow her example until it is not too late.',
+'Robert*s days are numbered after he allowed this to happen live',
+'Sad Day For De Niro',
+'Sad Day For Italians After Robert*s Announcement',
+'Italians don*t deserve such donations',
+'She must fear serious consequences after scandalous revelations during a webcast',
+'She accidentally shared this clever methodic with people.',
+'Cavalli was dumbfounded after his last speach with ..',
+'This is a live interview that nobody could stop.. What a big loss for the fans..',
+'They were trying to interrupt this translation, but it was too late. You will not be pleased about what comes next',
+'You do not deserve it! Does it really happen "on air"?',
+'Flavio Sentenced To 17 Years',
+'"A Truly Emotional Day For Italy After Flavio*s Live Broadcast"',
+'Numbers Don*t Lie!',
+'A Sad Day For Italy After The Leaked Interview of Flavio..',
+'Italians report "crazy" outcomes through using this',
+'He pulled out his phone and showed viewers exactly how this system works for him',
+'Viewers Didn*t Expect To See Such Turn Of Events',
+'Producers are not happy about this, but when he said it on live TV, it was too late!',
+'This interview causes severe consequences for Bill',
+'Did that really happen on live TV?',
+'Andrea Confirmed The Rumours',
+'Rumours Were Confirmed By Andrea',
+'Italians "In Love" With Andrea After..',
+'"I have one goal - to set Italians for life"',
+'Unheard-of backdoor returns fortunes to those willing to put in 250',
+'He Just Went On National TV Show And Exposed ALL',
+'They were not able to stop this TV streaming..',
+'She Accidentally Revealed This Smart Loophole On TV',
+'He claims anyone can do it Live on the Canale 5',
+'The TV Show Was Left Speechless', 
+'He Was Left Speechless',
+'The Elite Doesn*t Want Me to Share This, But My Conscience is Not Letting Me Keep it For Myself Only',
+'After scandalous revelations during a live broadcast, she must fear serious consequences',
+'Thousands of Italians have won thousands in 4 days thanks to Flavio*s advice!',
+'Flavio*s only goal: to help citizens pay their bills and lead a full life.',
+'Limited places, join now before it*s too late!',
+'He cannot escape the consequences of his actions ... This is what he did',
+'Now we know that the rumours are true',
+'He Was Very Open About This In His Live TV Interview',
+'This is an interview, that couldn*t be stopped',
+'Flavio said This Scandal Will Go Down In History',
+'The Hardest Time of Italy is Coming',
+'It was too late to stop the broadcast when it was accidentally revealed. You will not be happy about it!',
+'Did that really happen on live TV?',
+'This method was exposed by mistake and it went viral for obvious reasons. ',
+'I have tried tesn*t want other Italians to have access to this!',
+'"Rumours have been confirmed: Italians can use it"',
+'Drama on Italian Television - a "Secret" was revealed by mistake',
+'RAI TV: "I recovered my failure thanks to this.." ****RAI - is TV channel****',
+'Briatore allowed it to be revealed live... They are not happy about it',
+'Robert: "It*s time for the Italians to know the truth about..."',
+'Last Hour: Scandal For Flavio..',
+'Drama on the set of this new idea!',
+'"The idea was simple: to give ordinary Italians the chance to make..."',
+'Unomattina mistakenly reveals his most kept secret on TV',
+'“At that point, I was willing to try anything.”',    
+'He Finally reveals how he got back on his feet',
+'It*s the best time for Italians to discover new method of..',
+'This scandal got Jeff really mad',
+'His most terrible predict come true',
+'His "joke" comes true. Bank of Italy is in a trap',
+'Bezos is in a trap',
+'Italians are in a trap',
+'Banks are helpless',
+'Heartbreaking End for Bezos',
+'Dreadful day for Italy',
+'This revelations shake up Italians',
+'Jeff*s dayso keep it underground for over 2 years. It*s time to share my deepest secret with the Italians"',
+'The Elite do are irrevocably over',
+'Miserable day for Italians', 
+'What happened next make banks stunned',
+'Bezos was right. Italians are stunned',
+'Heart Breaking News For Bezos',
+'Sad Day For Italy',
+'Sad Day For Bezos',
+'Bezos is giving Italians one last chance!',
+'A Stunning End For Bezos',
+'Italians Are Stunned By The World*s Richest Man!',
+'The Richest Man In The World Has The Nation In Shock!',
+'Bezos Drops A Nuclear Announcement On All Italians',
+'The famous TV-host has almost arrested',
+
+//28/08
+'The interview with Winslet was interrupted by the authorities, but it was too late as she already talked about everything',
+'Famous British actress sees radical changes coming to every Briton',
+'Famous British Actress Sharing The Un-heard Backdoor With Brits!',
+'She has no fear about the potential consequences of her inspirational actions!',
+'Mel Gibson*s statement during the interview stunned the authorities and now the producers are furious and considering what measures to take',
+'The microphone was left on during the show!',
+'It was too late to go back! Producers are furious due the things he said!',
+'Gibson Stated That "Radical" Change Is Coming For Every Aussie!'
+
+]
+  function newQuote() {
+    let randomNumber = Math.floor(Math.random() * (copies.length));
+    let randomNumber1 = Math.floor(Math.random() * (copies.length)+1);
+
+document.getElementById('Headline').innerHTML = copies[randomNumber];
+document.getElementById('Copy').innerHTML = copies[randomNumber1];
+
+
+	//function CheckValues() {
+		//document.querySelector('#output').innerText = *;
+		//let payout =parseInt(document.getElementById('Payout').value);
+		//let cpl = parseInt(document.getElementById('CPL').value);
+		//let costs = cpl*10;			
+		//let currentROI = Math.floor(payout*100/costs);
+		//let p = document.createElement('p');
+		//p.innerText = currentROI;
+		//document.querySelector('#output').innerText = 'ROI = ' + currentROI + ' %';
+	}
+</script>
+</html>
