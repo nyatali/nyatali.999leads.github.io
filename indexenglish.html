@@ -187,16 +187,13 @@ ITALY
 'Your bankers hopes you*ll never find out about this'
 
 ]
-  function newQuote() {
+   function newQuote() {
     let randomNumber = Math.floor(Math.random() * (copies.length));
     let randomNumber1 = Math.floor(Math.random() * (copies.length)+1);
-
 document.getElementById('Headline').innerHTML = copies[randomNumber];
 document.getElementById('Copy').innerHTML = copies[randomNumber1];
-
-
 	//function CheckValues() {
-		//document.querySelector('#output').innerText = *;
+		//document.querySelector('#output').innerText = '';
 		//let payout =parseInt(document.getElementById('Payout').value);
 		//let cpl = parseInt(document.getElementById('CPL').value);
 		//let costs = cpl*10;			
