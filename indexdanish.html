@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" dir="ltr">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" integrity="sha256-2YQRJMXD7pIAPHiXr0s+vlRWA7GYJEK0ARns7k2sbHY=" crossorigin="anonymous" />
+    <meta name="description" content="calculator">
+    <title>Calculate price per lead</title>
+<script type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css"> 
+    <meta name="referrer" content="none">
+</head>
+<body>
+<div class="container">
+  <br>
+<h1>Copies Generator</h1>
+<br>
+ <form>
+  <div class="row">
+    <div class="five columns">
+
+    </div>
+    <div class="five columns">
+        
+    </div>
+  </div>
+  <br>
+  <input class="button-primary" type="button" value="Get Copy" onclick="newQuote()">
+</form>
+<br>
+<div id="output"></div>
+ <div class="row" id="Headline"></div>
+  <div class="row" id="Copy"></div>
+<br>
+</div>
+
+
+
+
+</body>
+<script type="text/javascript">
+
+  let copies = [ 
+  
+]
+  
+  function newQuote() {
+    let randomNumber = Math.floor(Math.random() * (copies.length));
+    let randomNumber1 = Math.floor(Math.random() * (copies.length)+1);
+
+document.getElementById('Headline').innerHTML = copies[randomNumber];
+document.getElementById('Copy').innerHTML = copies[randomNumber1];
+
+
+	//function CheckValues() {
+		//document.querySelector('#output').innerText = '';
+		//let payout =parseInt(document.getElementById('Payout').value);
+		//let cpl = parseInt(document.getElementById('CPL').value);
+		//let costs = cpl*10;			
+		//let currentROI = Math.floor(payout*100/costs);
+		//let p = document.createElement('p');
+		//p.innerText = currentROI;
+		//document.querySelector('#output').innerText = 'ROI = ' + currentROI + ' %';
+	}
+</script>
+</html>
+
+
+
+
