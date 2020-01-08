@@ -25,20 +25,18 @@
     </div>
   </div>
   <br>
-  <input class="button-primary" type="button" value="Get Copy" onclick="newQuote()">
+	 
+	 <input class="button-primary" type="button" value="Get Copy" onclick="newQuote()">
 </form>
 <br>
 <div id="output"></div>
  <div class="row" id="Headline"></div>
   <div class="row" id="Copy"></div>
 <br>
+	
+	<p style="color:red"> </p>
 </div>
-
-
-
-
 </body>
-<p>* - means '</p>
 <script type="text/javascript">
   let copies = [ 'Zlatan Ibrahimović revela la verdad oculta detrás de...',
 'Se confirman los rumores - "¡Todos deben tener acceso a esto!"',
@@ -66,7 +64,7 @@
 'Permitió que fueran revelados en vivo... No están felices al respecto',
 'Messi confirma los rumores',
 'Los días de Messi están contados luego de que permitió que esto sucediera en la televisión en vivo',
-'¡NO PUEDE huir de las consecuencias de sus acciones!
+'¡NO PUEDE huir de las consecuencias de sus acciones!',
 '¡No sabía lo que se estaba revelando en la televisión en vivo hasta que fue demasiado tarde!',
 'Los rumores indican que es el final.',
 'Marco no puede escapar de las consecuencias de su escandalosa revelación',
@@ -102,10 +100,8 @@
 'Arriesgó mucho al difundir esta información a través de los medios de comunicación oficiales, pero fue lo correcto.',
 '¡Vale la pena compartir esta contribución de [nombre]!'
 
-
 ]
-  
-  function newQuote() {
+   function newQuote() {
     let randomNumber = Math.floor(Math.random() * (copies.length));
     let randomNumber1 = Math.floor(Math.random() * (copies.length)+1);
 document.getElementById('Headline').innerHTML = copies[randomNumber];
@@ -122,4 +118,3 @@ document.getElementById('Copy').innerHTML = copies[randomNumber1];
 	}
 </script>
 </html>
-
